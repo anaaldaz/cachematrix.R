@@ -12,14 +12,14 @@ invrs <- NULL
          getinverse = getinverse)
 }
 
-cacheSolve <- function(x, ...) {
+cacheSolve <- function(x,) {
  invrs <= x$getinverse()
     if(!is.null(invrs)) {
-        message("getting cached data")
+        message("getting data from cache")
         return(invrs)
     }
     mat <- x$get()
-    invrs <- solve(mat, ...)
+    invrs <- solve(mat,)
     x$setinverse(invrs)
     invrs
 }
